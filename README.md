@@ -7,7 +7,6 @@ Later on I follow the instructions (& example repo) found here [xaringan_gh](htt
 
 
 ## PROCESS:
-
 - Clone this repo (or recreate similar) with the key files in teh `./docs/` sub-folder 
 - setup github pages: `Settings` - `Github Pages`- `source: master branch/docs folder`
 - Done! The slides can be viewed online at the url on the setting page. 

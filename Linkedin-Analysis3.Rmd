@@ -3,8 +3,9 @@ title: "LinkedIn & IFC study of migration"
 author: "Luisa M Mimmi"
 date: "November 24, 2017"
 output:
+  pdf_document: 
+    latex_engine: xelatex
   html_document: default
-  pdf_document: default
   word_document: default
 ---
 
@@ -29,7 +30,7 @@ library(ggplot2) # install.packages("ggplot2")
 library(dplyr)
 library(knitr)
 library(datasets) # initialize
-library (knitr)
+library(knitr)
 library(kableExtra)
 library(stats)
 library(tidyr)
@@ -41,6 +42,9 @@ library(stats)
 getwd()
 migr <- read.csv("migration.csv",fileEncoding="UTF-8-BOM")
 demog <- read.csv("demographics.csv",fileEncoding="UTF-8-BOM")
+
+load(here::here(".","migr.Rdata"))
+load(here::here(".","demog.Rdata"))
 ```
 
 # 2 DATA EXPLORATION BY COUNTRY
@@ -790,11 +794,10 @@ freq_OrigDegree  # US has a significantly higher # of Associates leaving (18% vs
 ##### Cramer's V
  a measure of association for nominal variables. Effectively it is the Pearson chi-square statistic rescaled to have values between 0 and 1, as follows:
 
-$\ V = sqrt(X^2 / [nobs * (min(ncols, nrows) – 1)]) $
-
+$$\phi_{c}=\sqrt{\frac{\chi^2}{N*(min(ncols, nrows)-1)}} $$
 where X^2 is the Pearson chi-square, nobs represents the number of observations included in the table, and where ncols and nrows are the number of rows and columns in the table, respectively.
 
-For a 2 by 2 table, of course, this is just the square root of chi-square divided by the number of observations, which is also known as the $\phi $ coefficient.
+For a 2 by 2 table, of course, this is just the square root of chi-square divided by the number of observations, which is also known as the $\phi$ coefficient.
 
 Cramer’s V varies from 0 (corresponding to no association between the variables) to 1 (complete association) and can reach 1 only when the two variables are equal to each other
 ```{r}
