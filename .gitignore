@@ -1,0 +1,16 @@
+.Rproj.user
+.Rapp.history
+.Rhistory
+.RData
+.Ruserdata
+
+github.sh
+
+Backup_Private
+
+        
+migration.csv
+demographics.csv
+
+*.log
+*.html

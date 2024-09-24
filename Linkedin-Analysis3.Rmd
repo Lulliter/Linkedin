@@ -2,11 +2,7 @@
 title: "LinkedIn & IFC study of migration"
 author: "Luisa M Mimmi"
 date: "November 24, 2017"
-output:
-  pdf_document: 
-    latex_engine: xelatex
-  html_document: default
-  word_document: default
+output: pdf_document
 ---
 
 # 1 CONCEPTUAL FRAMEWORK
@@ -39,9 +35,9 @@ library(stats)
 ```
 
 ```{r data , results='hide', warning=FALSE, message = FALSE}
-getwd()
-migr <- read.csv("migration.csv",fileEncoding="UTF-8-BOM")
-demog <- read.csv("demographics.csv",fileEncoding="UTF-8-BOM")
+# getwd()
+# migr <- read.csv("migration.csv",fileEncoding="UTF-8-BOM")
+# demog <- read.csv("demographics.csv",fileEncoding="UTF-8-BOM")
 
 load(here::here(".","migr.Rdata"))
 load(here::here(".","demog.Rdata"))
@@ -214,7 +210,8 @@ aggreOrig <- origin  %>%
 
 # Top 10 ORIGIN cities  
 aggreOrig_short <- aggreOrig[1:10,]  
-kable(aggreOrig_short, format = "html", caption = "Ranking of cities by Origin") %>%  kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
+kable(aggreOrig_short, #format = "html", 
+      caption = "Ranking of cities by Origin") %>%  kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
 
 # create destination table
 destination <- both %>% select(id=NEW_MEM_ID, degree=HIGHEST_DEGREE_OBTAINED, seniority=SENIORITY, sector=EMPLOYER_INDUSTRY_SECTOR, role=POSITION_FUNCTION, date=WEEK_BEGINNING, countryD=DESTINATION_COUNTRY, cityD=DESTINATION_REGION)
@@ -232,7 +229,8 @@ aggreDest <- destination  %>%
 
 # Top 10 DESTINATION cities
 aggreDest_short <- aggreDest[1:10,]  
-kable(aggreDest_short, format = "html", caption = "Ranking of cities by popular destination") %>% kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
+kable(aggreDest_short, #format = "html", 
+      caption = "Ranking of cities by popular destination") %>% kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
 ```
 * **INSIGHTs**: 
     + Intristingly, London is # 5 Origin but # 10 Destination
@@ -259,7 +257,8 @@ aggreOrigUK <- originUK  %>%
 
 # Top 10 ORIGIN cities  
 aggreOrig_shortUK <- aggreOrigUK[1:10,]  
-kable(aggreOrig_shortUK, format = "html", caption = "Ranking of cities by Origin") %>%  kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
+kable(aggreOrig_shortUK, #format = "html", 
+      caption = "Ranking of cities by Origin") %>%  kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
 
 
 # ======================================================#
@@ -280,7 +279,8 @@ aggreDestUK <- destinationUK  %>%
 
 # Top 10 DESTINATION cities
 aggreDest_shortUK <- aggreDestUK[1:10,]  
-kable(aggreDest_shortUK, format = "html", caption = "Ranking of cities by popular destination") %>% kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
+kable(aggreDest_shortUK, #format = "html", 
+      caption = "Ranking of cities by popular destination") %>% kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
 ```
 * **INSIGHTs**: 
     + Contrary to widespread mobility in US, London is origin of 28% of migrants and the Destination for 55% of them 
@@ -305,7 +305,8 @@ aggreOrigAustr <- originAustr  %>%
 
 # Top 10 ORIGIN cities  
 aggreOrig_shortAustr <- aggreOrigAustr[1:10,]  
-kable(aggreOrig_shortAustr, format = "html", caption = "Ranking of cities by Origin") %>%  kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
+kable(aggreOrig_shortAustr, #format = "html", 
+      caption = "Ranking of cities by Origin") %>%  kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
 
 
 # ======================================================#
@@ -326,7 +327,8 @@ aggreDestAustr <- destinationAustr  %>%
 
 # Top 10 DESTINATION cities
 aggreDest_shortAustr <- aggreDestAustr[1:10,]  
-kable(aggreDest_shortAustr, format = "html", caption = "Ranking of cities by popular destination") %>% kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
+kable(aggreDest_shortAustr, #format = "html", 
+      caption = "Ranking of cities by popular destination") %>% kable_styling(bootstrap_options = c("striped", "hover", full_width = T , position = "center",font_size = NULL))
 ```
 * **INSIGHTs**: 
     + Similar to UK, in Australiam Sydney is the origin of 36% of migrants and the Destination for 50% of them 
