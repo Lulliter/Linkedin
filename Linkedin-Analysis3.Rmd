@@ -2,7 +2,10 @@
 title: "LinkedIn & IFC study of migration"
 author: "Luisa M Mimmi"
 date: "November 24, 2017"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 ---
 
 # 1 CONCEPTUAL FRAMEWORK

@@ -6,9 +6,10 @@
 
 github.sh
 
-Backup_Private
 
-        
+site_libs/
+
+Backup_Private
 migration.csv
 demographics.csv
 
